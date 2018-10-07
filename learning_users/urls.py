@@ -20,5 +20,7 @@ from basicapp import views
 urlpatterns = [
     re_path('admin/', admin.site.urls),
     re_path(r'^$', views.index, name='index'),
-    re_path(r'^basicapp/', include('basicapp.urls'))
+    re_path(r'^basicapp/', include('basicapp.urls')),
+    re_path(r'logout/$', views.user_logout, name='logout')
 ]
+

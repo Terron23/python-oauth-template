@@ -1,4 +1,4 @@
-{% extends 'basicapp/login.html' %}
+{% extends 'basicapp/base.html' %}
 
 
 {% block body_block %}
@@ -9,7 +9,7 @@
     <form action="{% url 'basicapp:user_login' %}" methon="POST">
 
         {% csrf_token %}
-        
+
         <label for="username">Username</label>
         <input name="username" type="text" />
 

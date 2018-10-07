@@ -17,7 +17,12 @@
       <ul class="nav navbar-nav">
         <li class="active"><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
         <li class="active"><a class="navbar-link" href="{% url 'basicapp:register' %}">Register</a></li>
-     
+
+        {% if user.is_authenticated %}
+        <li class="active"><a class="navbar-link" href="{% url 'logout' %}">Log Out</a></li>
+        {% else %}
+        <li class="active"><a class="navbar-link" href="{% url 'basicapp:user_login' %}">Log In</a></li>
+     {% endif %}
       </ul>
     </div>
   </nav>
